@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles/site.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+    <style type="text/css">
+        .stage {
+            border: none;
+        }
+
+        .rocket {
+            width: 150px;
+            height: 150px;
+            transform: rotate(90deg);
+            position: absolute;
+            top: 30;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stage">
+        <img class="rocket" src="images/rocket.png">
+    </div>
+    <script type="text/javascript">
+        var timelime = new TimelineMax();
+
+        var rocket = document.querySelector('.rocket');
+
+        timelime.to(rocket, 2, {
+            css: {
+                'left': '500'
+            },
+            repeat: -1
+        });
+
+        /**
+            eg 02:
+                Make the rocket fly from bottom to the top
+
+            eg 03:
+                Ship flys and then two stars appears
+                Ship flys and then two stars appears, change background to black
+
+            eg 04:
+                Star flying around earch
+                Add more stars around earth
+
+            eg 05:
+                Make a ship fly around earth 
+        */
+    </script>
+</body>
+</html>

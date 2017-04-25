@@ -1,0 +1,12 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.stage {
+	width: 550px;
+	height: 550px;
+	border: 1px solid #000;
+	margin: 25px auto;
+	position: relative;
+}

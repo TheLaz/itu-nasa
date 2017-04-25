@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../styles/site.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+    <style type="text/css">
+        .cube {
+            width: 250px;
+            height: 250px;
+            background-color: #F44336;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stage">
+        <div class="cube"></div>
+    </div>
+    <script type="text/javascript">
+        var timelime = new TimelineMax();
+
+        var cube = document.querySelector('.cube');
+
+        timelime.to(cube, 2, {
+            'borderRadius': '50%',
+            'backgroundColor': '#9C27B0',
+            'width': 450,
+            'height': 450,
+            repeat: -1
+        });
+
+        /**
+            eg 01:
+                Change the size of the cube: width: height
+        */
+    </script>
+</body>
+</html>
