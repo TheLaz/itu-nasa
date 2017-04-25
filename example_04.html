@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles/site.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+    <style type="text/css">
+
+        body {
+            background-color: #000;
+        }
+
+        .stage {
+            border: none;
+        }
+
+        .path {
+          width: 350px;
+          height: 350px;
+          position: relative;
+          animation-name: pathRotate;
+          animation-duration: 15s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes pathRotate {
+          from {
+            transform: rotateZ(0deg);
+          }
+          to {
+            transform: rotateZ(360deg);
+          }
+        }
+
+        .orbit {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 350px;
+            border-radius: 600px;
+            border: 2px solid #32424f;
+            top: 20px;
+            left: 50%;
+            margin-left: -176px;
+        }
+
+        .star {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 30px;
+        }
+
+        .sun {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 97px;
+            left: 105px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="stage">
+        <div class="orbit">
+            <img class="sun" src="images/sun.png"/>
+            <div class="path">
+                <img class="star" src="images/earth.png"/>
+            </div>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+        var timelime = new TimelineMax();
+
+
+        /**
+            eg 04:
+                Star flying around earth
+                Add more stars around earth
+        */
+    </script>
+</body>
+</html>
