@@ -37,7 +37,7 @@
             background: #fff;
             box-shadow: 0 0 5px 0 #fff;
             border-radius: 100%;
-            filter: blur(2px);
+            filter: blur(3px);
             z-index: 10;
             position: absolute;
         }
@@ -63,44 +63,33 @@
         <img class="moon" src="images/moon.png"/>
     </div>
     <script type="text/javascript">
-        var timelime = new TimelineMax({ repeat: -1, repeatDelay: 2 });
+        var timelime = new TimelineMax({ repeat: -1, repeatDelay:  0.2});
 
         var rocket = document.querySelector('.rocket');
         var moon = document.querySelector('.moon');
         var startfirst = document.querySelector('.star-first');
         var starsecond = document.querySelector('.star-second');
 
-        timelime.to(rocket, 3, {
+        /**
+            -=0.5 means that the tween will start 0.5 seconds
+            earlier than the original start of the tween
+        */
+        timelime.to(rocket, 1.8, {
             css: {
                 'bottom': '350'
-            }
+            },
+            ease: SlowMo.ease.config(0.1, 0.4, false)
         }).to(starsecond, 0.25, {
-            'boxShadow': '0 0 15px 3px #fff'
-        }, '-=2.5')
+            'boxShadow': '0 0 25px 10px #fff'
+        }, '-=0.5')
         .to(startfirst, 0.25, {
-            'boxShadow': '0 0 15px 3px #fff'
+            'boxShadow': '0 0 35px 10px #fff'
         }, 0.2)
         .to(moon, 0.5, {
             css: {
                 opacity: 1
             }
-        }, '-=2.5')
-
-        /**
-            eg 03:
-                Ship flys
-                    In 0.25s:
-                        two stars appears
-                    In 1s:
-                        Background changes to black 
-
-            eg 04:
-                Star flying around earch
-                Add more stars around earth
-
-            eg 05:
-                Make a ship fly around earth 
-        */
+        }, '-=1');
     </script>
 </body>
 </html>
