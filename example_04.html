@@ -19,19 +19,6 @@
           width: 350px;
           height: 350px;
           position: relative;
-          animation-name: pathRotate;
-          animation-duration: 15s;
-          animation-iteration-count: infinite;
-          animation-timing-function: linear;
-        }
-
-        @-webkit-keyframes pathRotate {
-          from {
-            transform: rotateZ(0deg);
-          }
-          to {
-            transform: rotateZ(360deg);
-          }
         }
 
         .orbit {
@@ -76,8 +63,11 @@
         
     </div>
     <script type="text/javascript">
-        var timelime = new TimelineMax();
+        var timelime = new TimelineMax({ repeat: -1 });
 
+        timelime.to('.path', 15, {
+            rotation: '360deg'
+        });
 
         /**
             eg 04:
