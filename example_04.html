@@ -19,6 +19,7 @@
           width: 350px;
           height: 350px;
           position: relative;
+          transform: rotate(0deg);
         }
 
         .orbit {
@@ -63,16 +64,14 @@
         
     </div>
     <script type="text/javascript">
-        var timelime = new TimelineMax({ repeat: -1 });
+        var timelime = new TimelineMax();
 
-        timelime.to('.path', 15, {
-            rotation: '360deg'
-        });
+        timelime.to('.path', 5, { rotation: '360deg', repeat: -1, ease: Power0.easeNone });
 
         /**
             eg 04:
-                Star flying around earth
-                Add more stars around earth
+                - Add 1 more star
+                - Make the stars spin around themselves
         */
     </script>
 </body>
