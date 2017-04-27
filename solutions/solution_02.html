@@ -25,31 +25,13 @@
     </div>
     <script type="text/javascript">
         var timelime = new TimelineMax();
-
-        var rocket = document.querySelector('.rocket');
-
-        timelime.to(rocket, 3, {
+        
+        timelime.to('.rocket', 3, {
             css: {
                 'bottom': '350'
             },
             repeat: -1
         });
-
-        /**
-            eg 02:
-                Make the rocket fly from bottom to the top
-
-            eg 03:
-                Ship flys and then two stars appears
-                Ship flys and then two stars appears, change background to black
-
-            eg 04:
-                Star flying around earch
-                Add more stars around earth
-
-            eg 05:
-                Make a ship fly around earth 
-        */
     </script>
 </body>
 </html>

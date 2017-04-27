@@ -22,20 +22,13 @@
     <script type="text/javascript">
         var timelime = new TimelineMax();
 
-        var cube = document.querySelector('.cube');
-
-        timelime.to(cube, 2, {
+        timelime.to('.cube', 2, {
             'borderRadius': '50%',
             'backgroundColor': '#9C27B0',
             'width': 450,
             'height': 450,
             repeat: -1
         });
-
-        /**
-            eg 01:
-                Change the size of the cube: width: height
-        */
     </script>
 </body>
 </html>
