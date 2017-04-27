@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../styles/site.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+    <style type="text/css">
+
+        body {
+            background-color: #000;
+        }
+
+        .path {
+            position: relative;
+            transform: rotate(0deg);
+            position: absolute;
+        }
+
+        .orbit {
+            position: absolute;
+            border-radius: 600px;
+            border: 2px solid #32424f;
+            margin-left: -176px;
+        }
+
+        .orbit .path .star {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 30px;
+            left: 40px;
+        }
+
+        .orbit--earth,
+        .orbit--earth .path {
+            width: 500px;
+            height: 500px;
+        }
+
+        .orbit--earth {
+            top: 24px;
+            left: 200px;
+        }
+
+        .orbit--venus,
+        .orbit--venus .path {
+            width: 350px;
+            height: 350px;
+        }
+
+        .orbit--venus {
+            top: 92px;
+            left: 270px;
+        }
+
+        .orbit--venus .path .star {
+            top: 127px;
+            left: -29px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .sun {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: 140px;
+            left: 144px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="stage">
+        <img class="sun" src="../images/sun.png"/>
+
+        <div class="orbit orbit--venus">
+            <div class="path">
+                <img class="star" src="../images/venus-icon.png"/>
+            </div>
+        </div>
+
+        <div class="orbit orbit--earth">
+            <div class="path">
+                <img class="star" src="../images/earth.png"/>
+            </div>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+
+        var timelime = new TimelineMax();
+
+        timelime.to('.orbit--earth .path', 15, { 
+            rotation: '360deg', 
+            repeat: -1, 
+            ease: Power0.easeNone 
+        })
+
+        .to('.orbit--venus .path', 12, { 
+            rotation: '360deg', 
+            repeat: -1, 
+            ease: Power0.easeNone 
+        }, 0)
+
+        .to('.star', 15, { 
+            rotation: '360deg', 
+            repeat: -1, 
+            ease: Power0.easeNone
+        }, 0);
+
+        
+
+        /**
+            eg 04:
+                - Add 1 more star
+                - Make the stars spin around themselves
+        */
+    </script>
+</body>
+</html>

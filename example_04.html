@@ -11,6 +11,11 @@
             background-color: #000;
         }
 
+        .debug .stage,
+        .debug .path {
+            border: 1px solid red;
+        }
+
         .stage {
             border: none;
         }
@@ -52,7 +57,7 @@
 
     </style>
 </head>
-<body>
+<body class="debug--off">
 
     <div class="stage">
         <div class="orbit">
@@ -69,7 +74,7 @@
         timelime.to('.path', 5, { rotation: '360deg', repeat: -1, ease: Power0.easeNone });
 
         /**
-            eg 04:
+            eg 04 (20 min):
                 - Add 1 more star
                 - Make the stars spin around themselves
         */

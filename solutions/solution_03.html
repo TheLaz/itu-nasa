@@ -6,28 +6,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
     <style type="text/css">
-
+    
         .stage {
             border: none;
-            background-color: #BBDEFB;
+            background-color: #000;
         }
 
         .rocket {
+
             width: 150px;
             height: 150px;
             position: absolute;
-            bottom: 0;
+        }
+
+        .moon {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: 0;
+            right: 150px;
+            opacity: 0;
         }
 
         .star {
             width: 8px;
             height: 8px;
             background: #fff;
-            box-shadow: 0 0 5px 0 #fff;
+            box-shadow: 0 0 35px 10px #fff;
             border-radius: 100%;
-            filter: blur(2px);
+            filter: blur(3px);
             z-index: 10;
             position: absolute;
+            opacity: 0
         }
 
         .star-first {
@@ -48,28 +58,62 @@
         <i class="star star-first"></i>
         <i class="star star-second"></i>
         <img class="rocket" src="../images/rocket.png"/>
+        <img class="moon" src="../images/moon-icon.png"/>
     </div>
     <script type="text/javascript">
-        var timelime = new TimelineMax({ repeat: -1, repeatDelay: 2 });
+        var timelime = new TimelineMax({ repeat: -1, repeatDelay:  0.2});
 
         var stage = document.querySelector('.stage');
         var rocket = document.querySelector('.rocket');
+        var moon = document.querySelector('.moon');
         var startfirst = document.querySelector('.star-first');
         var starsecond = document.querySelector('.star-second');
 
-        timelime.to(rocket, 3, {
+        /**
+            -=0.5 means that the tween will start 0.5 seconds
+            earlier than the original start of the tween
+        */
+        timelime.set(rocket, {
+            css: {
+                'bottom': '0'
+            }
+        })
+        
+        .from(stage, 5, {
+            'backgroundColor': '#2196F3',
+             ease: SteppedEase.config(6)
+        })
+        
+        .to(rocket, 3, {
             css: {
                 'bottom': '350'
-            }
-        }).to(starsecond, 0.25, {
-            'boxShadow': '0 0 15px 3px #fff'
-        }, '-=2.5')
+            },
+            ease: Power4.easeOut
+        }, '-=4')
+        
         .to(startfirst, 0.25, {
-            'boxShadow': '0 0 15px 3px #fff'
-        }, '-=2')
-        .to(stage, 0.3, {
-            'backgroundColor': '#222'
-        }, .3);
+            css: {
+                opacity: 1
+            }
+        }, '-=2.5')
+
+        .to(starsecond, 0.25, {
+            css: {
+                opacity: 1
+            }
+        }, '-=1.5')
+        
+        .to(moon, 0.5, {
+            css: {
+                opacity: 1
+            }
+        }, '-=1');
+
+        /**
+            eg 03:
+                Make the background change from sky blue
+                to space black while the ship is taking off
+        */
     </script>
 </body>
 </html>

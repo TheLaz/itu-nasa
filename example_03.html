@@ -6,13 +6,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 
     <style type="text/css">
-
-        body {
-            background-color: #000;
-        }
-
+    
         .stage {
             border: none;
+            background-color: #000000;
         }
 
         .rocket {
@@ -24,7 +21,7 @@
 
         .moon {
             width: 250px;
-            height: 200px;
+            height: 250px;
             position: absolute;
             top: 0;
             right: 150px;
@@ -60,7 +57,7 @@
         <i class="star star-first"></i>
         <i class="star star-second"></i>
         <img class="rocket" src="images/rocket.png"/>
-        <img class="moon" src="images/moon.png"/>
+        <img class="moon" src="images/moon-icon.png"/>
     </div>
     <script type="text/javascript">
         var timelime = new TimelineMax({ repeat: -1, repeatDelay:  0.2});
@@ -90,6 +87,12 @@
                 opacity: 1
             }
         }, '-=1');
+
+        /**
+            eg 03 (15 min):
+                Make the background change from sky blue
+                to space black while the ship is taking off
+        */
     </script>
 </body>
 </html>
